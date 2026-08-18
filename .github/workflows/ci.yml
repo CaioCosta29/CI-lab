@@ -21,3 +21,6 @@ jobs:
 
       - name: Mostrar o arquivo empregado
         run: cat src/main/java/com/caio/ci_lab/application/core/domain/Empregado.java
+
+      - name: Ver o Java do runner
+        run: java -version
