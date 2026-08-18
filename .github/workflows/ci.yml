@@ -19,11 +19,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Ver o artefato
-        run: ls -lh target/*.jar
-
       - name: Build
         run: mvn -B -DskipTests package
 
-      - name: Ver o Java do runner
-        run: java -version
+      - name: Ver o artefato
+        run: ls -lh target/*.jar
