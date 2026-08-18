@@ -1,0 +1,17 @@
+name: "CI - Primeira integração"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  exemplo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rodar um hello world
+        run: echo Hello, World
