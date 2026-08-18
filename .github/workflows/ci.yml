@@ -19,14 +19,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Rodar um hello world
-        run: echo Hello, World
+      - name: Ver o artefato
+        run: ls -lh target/*.jar
 
-      - name: Listar os arquivos
-        run: ls -la
-
-      - name: Mostrar o arquivo empregado
-        run: cat src/main/java/com/caio/ci_lab/application/core/domain/Empregado.java
+      - name: Build
+        run: mvn -B -DskipTests package
 
       - name: Ver o Java do runner
         run: java -version
