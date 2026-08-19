@@ -22,3 +22,13 @@ jobs:
 
       - name: Build e testes
         run: mvn -B verify
+
+  docker:
+    name: Build da imagem
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build da imagem
+        run: docker build -t ci-lab:${{ github.sha }} .
