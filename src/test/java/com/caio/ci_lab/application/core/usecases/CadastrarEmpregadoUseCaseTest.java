@@ -77,9 +77,5 @@ class CadastrarEmpregadoUseCaseTest {
         assertThat(empregado.isSalarioAcimaDaMedia(new BigDecimal("7000"))).isFalse();
     }
 
-    @Test
-    @DisplayName("Vai quebrar de proposito")
-    void deveFalharDeProposito() {
-        assertThat(1).isEqualTo(2);
-    }
+
 }

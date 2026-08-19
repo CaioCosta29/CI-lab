@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  exemplo:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +23,12 @@ jobs:
       - name: Build e testes
         run: mvn -B verify
 
-      - name: Ver o artefato
-        run: ls -lh target/*.jar
+  docker:
+    name: Build da imagem
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build da imagem
+        run: docker build -t ci-lab:${{ github.sha }} .
